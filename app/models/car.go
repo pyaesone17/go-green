@@ -17,3 +17,12 @@ func NewCar(id, name, carNumber string, price float64) *Car {
 		price,
 	}
 }
+
+// Rules will return the rules
+func (car *Car) Rules() map[string]interface{} {
+	data := map[string]interface{}{
+		"id":         "CAR ID|string",
+		"car_number": "Car Number|string",
+	}
+	return data
+}

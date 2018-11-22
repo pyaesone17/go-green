@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/pyaesone17/gogreen/app/core"
+	"github.com/pyaesone17/gogreen/app/models"
 	"github.com/pyaesone17/gogreen/rent"
 	"github.com/spf13/viper"
 )
@@ -52,5 +53,13 @@ func (con *Controller) RentCar(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"status": "successfully created", "rent": rent})
+	rules := rent.Rules()
+	data, err := models.Transform(rent, rules)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"status": "successfully created", "rent": data})
 }

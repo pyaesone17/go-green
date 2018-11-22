@@ -1,7 +1,6 @@
 package rent
 
 import (
-	"github.com/davecgh/go-spew/spew"
 	"github.com/pborman/uuid"
 	"github.com/pyaesone17/gogreen/app/datastore"
 	"github.com/pyaesone17/gogreen/app/models"
@@ -33,13 +32,12 @@ func (rentService *service) RentCar(carID string, numberOfDays int) (*models.Ren
 		return nil, err
 	}
 
-	spew.Dump(car)
-
 	id := uuid.New()
 	// Calcuate the cost based on number
 	cost := car.Price * float64(numberOfDays)
 	rent := models.NewRent(id, carID, numberOfDays, cost)
 	rentService.repository.Store(rent)
+	rent.Car = car
 
 	return rent, nil
 }
