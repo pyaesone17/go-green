@@ -1,6 +1,6 @@
 # Go Green
 
-### What happend When Go meets 🎄green, ❄️clean, 🛠robust , on fire 🔥and fast 🚀 ?
+### What happend When Go meets 🎄green, ❄️ clean, 🛠 robust , on fire 🔥and fast 🚀 ?
 
 
 
