@@ -1,0 +1,4 @@
+{
+  "addr": ":7000",
+  "mongodb": "mongodb://localhost"
+}
