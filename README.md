@@ -1,4 +1,4 @@
-# go-green
+# Go Green
 
 What happend When Go meets 🎄green, ❄️clean, 🛠robust 🔥and fast 🚀 ?
 
